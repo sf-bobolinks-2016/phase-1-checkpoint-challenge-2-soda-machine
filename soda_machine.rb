@@ -17,23 +17,25 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
-    # @sodas.select { |soda| if soda == soda_brand }
-    # @sodas.select { |soda| if @sodas[brand] == soda_brand }
     found = ""
-    # @sodas[:brand]
-    @sodas.each_with_index do |brand, price|
-      # p "#{brand} brand"
-      # p "#{price} price"
-      if @sodas[price].brand == soda_brand
-        found = @sodas[price]
+    @sodas.each_with_index do |brand, index|
+      if @sodas[index].brand == soda_brand
+        found = @sodas[index]
         return found
       end
     end
-    # found
     nil
   end
 
   def sell(soda_brand)
+    found = find_soda(soda_brand)
+    if found
+      @cash += found.price
+      @sodas.delete(found)
+      found
+    else
+      nil
+    end
   end
 
 end
@@ -47,4 +49,9 @@ m = SodaMachine.new(sodas: [pepsi, mountain_dew, coke_zero, second_pepsi], cash:
 # p m.sodas
 
 # p m.find_soda('Pepsi')
+p m.sell('Coke Zero')
+p m.cash
+m.sell('Mountain Dew')
+p m.cash
+
 
