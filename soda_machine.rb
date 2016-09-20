@@ -1,4 +1,7 @@
-class SodaMachine
+require_relative 'soda'
+
+
+class SodaMachine < Soda
   attr_reader :sodas, :cash
 
   def initialize(args = {})
@@ -7,6 +10,7 @@ class SodaMachine
   end
 
   def current_inventory_count
+    @@soda_count
   end
 
   def find_soda(soda_brand)
