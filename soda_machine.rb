@@ -18,13 +18,12 @@ class SodaMachine
   end
 
   def sell(soda_brand)
-    return nil if !find_soda(soda_brand)
-    if find_soda(soda_brand)
-      @cash += find_soda(soda_brand).price
-      soda = find_soda(soda_brand)
-      @sodas.delete(find_soda(soda_brand))
-      return soda
+    soda = find_soda(soda_brand)
+    if soda
+      @cash += soda.price
+      return_soda = soda
+      @sodas.delete(soda)
+      return return_soda
     end
   end
-
 end
