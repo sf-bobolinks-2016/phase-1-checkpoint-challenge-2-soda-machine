@@ -14,7 +14,7 @@ class SodaMachine
     @sodas.each do |soda|
       return soda if soda.brand == soda_brand
     end
-    nil
+    return nil
   end
 
   def sell(soda_brand)
