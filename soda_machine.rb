@@ -12,7 +12,7 @@ class SodaMachine
 
   def find_soda(soda_brand)
     p @sodas.select {|soda| soda.brand == soda_brand}[0]
-    #based on docs, this should return an array, however when I p it, it returns my soda object...why?
+
 
   end
 
