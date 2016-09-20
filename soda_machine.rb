@@ -14,7 +14,7 @@ class SodaMachine < Soda
   end
 
   def find_soda(soda_brand)
-    @sodas.each do |soda|
+    #@sodas.each do |soda|
       #p "@#{soda_brand}" if "@#{soda_brand}" == soda_brand
     end
 
