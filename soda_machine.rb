@@ -18,7 +18,6 @@ class SodaMachine
     desired = @sodas.find {|soda| soda.brand == soda_brand}
     @cash += desired.price if desired
     @sodas.delete(desired)
-    desired
   end
 
 end
