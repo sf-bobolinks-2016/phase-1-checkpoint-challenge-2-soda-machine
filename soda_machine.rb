@@ -30,6 +30,17 @@ class SodaMachine
   end
 
   def sell(soda_brand)
+
+    @sodas.each_with_index do |soda, idx|
+      if soda.brand == soda_brand
+        temp = @sodas[idx]
+        @sodas.delete_at(idx)
+        @cash += soda.price
+        return temp
+      end
+    end
+
+    return nil
   end
 
 end
