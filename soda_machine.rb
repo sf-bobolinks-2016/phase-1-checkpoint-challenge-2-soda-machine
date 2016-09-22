@@ -44,6 +44,3 @@ class SodaMachine
   end
 
 end
-
-a = SodaMachine.new(sodas: [Soda.new(brand: 'Pepsi', price: 0.65), Soda.new(brand: 'Mountain Dew', price: 0.75)], cash: 1.00)
-p a.find_soda("Mountain Dew")
