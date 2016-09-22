@@ -17,6 +17,12 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
+
+    if @sodas.include?(soda_brand)
+      return @sodas[@sodas.index(soda_brand)]
+    end
+
+    return nil
   end
 
   def sell(soda_brand)
