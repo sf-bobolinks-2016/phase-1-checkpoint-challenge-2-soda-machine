@@ -7,6 +7,13 @@ class SodaMachine
   end
 
   def current_inventory_count
+
+    count = 0
+
+    @sodas.each { count += 1 }
+
+    return count
+
   end
 
   def find_soda(soda_brand)
