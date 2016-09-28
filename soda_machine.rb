@@ -2,7 +2,7 @@ class SodaMachine
   attr_reader :sodas, :cash
 
   def initialize(args = {})
-    @sodas = args[:sodas] #array of soda object
+    @sodas = args[:sodas] #array of soda objects
     @cash = args[:cash] #total price
   end
 
@@ -19,8 +19,14 @@ class SodaMachine
     # array of soda of object
     #loop through the array
     #comparision
-      #soda.brand == brand_name
-      @sodas.find {|soda| soda.brand == soda_brand}
+    #soda.brand == brand_name
+    #@sodas.find {|soda| soda.brand == soda_brand}
+
+
+    @sodas.find{|soda| soda.brand == soda_brand}
+
+
+
   end
 
   def sell(soda_brand)
@@ -29,13 +35,18 @@ class SodaMachine
    #1. add the price of soda to the toral cash
    #2. delete the soda from the sodas collection
    #3.return the soda
-    
     # @soda = find_soda(soda_brand) 
-    # return bil if @soda.nil?
+    # return nil if @soda.nil?
     # @cash += @soda.price
     # @sodas.delete(@soda)
+    @soda = find_soda(soda_brand)
+    p @soda
+    return nil if @soda.nil?
+    p @soda.price
+    @cash += @soda.price
+    @sodas.delete(@soda)
 
-    @soda ? @cash += @soda.price && @sodas.delete(@soda) : nil
+    # @soda ? @cash += @soda.price && @sodas.delete(@soda) : nil
   end
 
 end
